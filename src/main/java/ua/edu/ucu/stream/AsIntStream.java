@@ -36,7 +36,7 @@ public class AsIntStream implements IntStream {
         Iterable<Integer> iterable = () -> this.iterator;
         int sum = 0;
         int counter = 0;
-        for (Integer elem : iterable) {
+        for (int elem : iterable) {
             sum = sum + elem;
             counter = counter + 1;
         }
@@ -58,7 +58,7 @@ public class AsIntStream implements IntStream {
     private Integer minOrMax(int value, boolean max) {
         isEmpty();
         Iterable<Integer> iterable = () -> this.iterator;
-        for (Integer elem : iterable) {
+        for (int elem : iterable) {
             if (elem > value && max || elem < value && !max) {
                 value = elem;
             }
@@ -85,7 +85,7 @@ public class AsIntStream implements IntStream {
     @Override
     public void forEach(IntConsumer action) {
         Iterable<Integer> iterable = () -> this.iterator;
-        for (Integer elem : iterable) {
+        for (int elem : iterable) {
             action.accept(elem);
         }
     }
@@ -104,7 +104,7 @@ public class AsIntStream implements IntStream {
     public int reduce(int identity, IntBinaryOperator op) {
         Iterable<Integer> iterable = () -> this.iterator;
         int temp = identity;
-        for (Integer elem : iterable) {
+        for (int elem : iterable) {
             temp = op.apply(temp, elem);
         }
         return temp;
