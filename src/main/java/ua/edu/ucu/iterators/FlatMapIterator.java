@@ -10,7 +10,8 @@ public class FlatMapIterator implements Iterator<Integer> {
     private Iterator<Integer> tempIterator;
     private IntToIntStreamFunction function;
 
-    public FlatMapIterator(Iterator<Integer> iterator, IntToIntStreamFunction function) {
+    public FlatMapIterator(Iterator<Integer> iterator,
+                           IntToIntStreamFunction function) {
         this.iterator = iterator;
         this.function = function;
     }
@@ -23,7 +24,8 @@ public class FlatMapIterator implements Iterator<Integer> {
 
         while (iterator.hasNext()) {
             int current = iterator.next();
-            AsIntStream tempStream = (AsIntStream) function.applyAsIntStream(current);
+            AsIntStream tempStream = (AsIntStream) function.
+                    applyAsIntStream(current);
             int[] lst = tempStream.toArray();
             tempIterator = new BaseIterator(lst);
             return true;

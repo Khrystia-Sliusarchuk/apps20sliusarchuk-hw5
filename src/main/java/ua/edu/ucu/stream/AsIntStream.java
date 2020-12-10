@@ -1,6 +1,10 @@
 package ua.edu.ucu.stream;
 
-import ua.edu.ucu.function.*;
+import ua.edu.ucu.function.IntBinaryOperator;
+import ua.edu.ucu.function.IntConsumer;
+import ua.edu.ucu.function.IntPredicate;
+import ua.edu.ucu.function.IntToIntStreamFunction;
+import ua.edu.ucu.function.IntUnaryOperator;
 import ua.edu.ucu.iterators.BaseIterator;
 import ua.edu.ucu.iterators.FilterIterator;
 import ua.edu.ucu.iterators.FlatMapIterator;

@@ -77,7 +77,7 @@ public class AsIntStreamTest {
     }
 
     @Test
-    public void testFilter(){
+    public void testFilter() {
         intStream = AsIntStream.of(tempArr);
         intStream = intStream.filter(x -> x > 0);
         int expResult = intStream.min();
